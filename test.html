@@ -11,7 +11,8 @@
 
 
 let label = ''
-const layout1 = imgui.layout(document.getElementById('test1'), function(layout){
+const test1 = document.getElementById('test1')
+const layout1 = imgui.layout(test1, function(layout){
 	layout.beginVertical()
 	for(let i=0; i<10; i++){
 		const t = 'test'+i
@@ -25,7 +26,8 @@ const layout1 = imgui.layout(document.getElementById('test1'), function(layout){
 
 let label2 = ''
 let rect2 = imgui.rect(100,100,300,300)
-const layout2 = imgui.layout(document.getElementById('test2'), function(layout){
+const test2 = document.getElementById('test2')
+const layout2 = imgui.layout(test2, function(layout){
 	rect2 = layout.window(rect2,function(){
 		layout.beginVertical()
 		for(let i=0; i<10; i++){
