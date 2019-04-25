@@ -1,0 +1,46 @@
+<!doctype>
+<html>
+	<head>
+	<script src="imgui.js"></script>
+	</head>
+
+	<body>
+		<div id="test1" style="width:50%;"></div>
+		<div id="test2" style="width:50%;"></div>
+	<script>
+
+
+let label = ''
+const layout1 = imgui.layout(document.getElementById('test1'), function(layout){
+	layout.beginVertical()
+	for(let i=0; i<10; i++){
+		const t = 'test'+i
+		if(layout.button(t)){
+			label = t
+		}
+	}
+	layout.label(label)
+	layout.endVertical()
+})
+
+let label2 = ''
+let rect2 = imgui.rect(100,100,300,300)
+const layout2 = imgui.layout(document.getElementById('test2'), function(layout){
+	rect2 = layout.window(rect2,function(){
+		layout.beginVertical()
+		for(let i=0; i<10; i++){
+			const t = 'test'+i
+			if(layout.button(t)){
+				label2 = t
+			}
+		}
+		layout.label(label2)
+		layout.endVertical()
+	},'haha')
+})
+
+
+
+	</script>
+	</body>
+</html>
