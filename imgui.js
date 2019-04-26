@@ -756,9 +756,13 @@
 			const patched = out.join('\n')
 			return new Function('layout',patched)
 		},
+		contextify:function(f){
+			const f2 = this._patch(f)
+			f2()
+		},
 		layout:function(d,f){
 			const layout = new ImGuiLayout(d)
-			const func = this._patch(f)
+			const func = f//this._patch(f)
 			this._layout_list.push(layout)
 			this._func_list.push(func)
 
