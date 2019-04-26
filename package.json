@@ -1,0 +1,19 @@
+{
+  "name": "imgui",
+  "version": "1.0.0",
+  "description": "[demo](https://htmlpreview.github.io/?https://github.com/he110world/imgui/master/demo.html)",
+  "main": "imgui.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/he110world/imgui.git"
+  },
+  "author": "he110world@126.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/he110world/imgui/issues"
+  },
+  "homepage": "https://github.com/he110world/imgui#readme"
+}
