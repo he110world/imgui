@@ -26,19 +26,41 @@ const layout1 = imgui.layout(test1, function(layout){
 
 let label2 = ''
 let rect2 = imgui.rect(100,100,300,300)
+let rect3 = imgui.rect(200,100,150,100)
+let show_test2 = true
 const test2 = document.getElementById('test2')
 const layout2 = imgui.layout(test2, function(layout){
-	rect2 = layout.window(rect2,function(){
-		layout.beginVertical()
-		for(let i=0; i<10; i++){
-			const t = 'test'+i
-			if(layout.button(t)){
-				label2 = t
+	if (show_test2) {
+		rect2 = layout.window(rect2,function(){
+			layout.beginVertical()
+			for(let i=0; i<10; i++){
+				const t = 'test'+i
+				if(layout.button(t)){
+					label2 = t
+				}
 			}
+			layout.endVertical()
+
+			layout.beginHorizontal()
+			for(let i=11; i<20; i++){
+				if(layout.button(i)){
+					label2 = i
+				}
+			}
+			layout.endHorizontal()
+
+			layout.label(label2)
+
+		},'window1')
+	}
+
+	rect3 = layout.window(rect3,function(){
+		const t = show_test2 ? 'hide' : 'show'
+		if(layout.button(t + ' window1')){
+			show_test2 = !show_test2
 		}
-		layout.label(label2)
-		layout.endVertical()
-	},'haha')
+	},'window2')
+
 })
 
 
