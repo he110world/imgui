@@ -546,7 +546,7 @@
 
 
 		///
-		_textField:function(id,str,lab,style){
+		_textField:function(id,str,lab,type,style){
 			elementOpen('div',null,null,'style','width:100%;')
 			if (lab) {
 				elementOpen('label',null,null,'for',id,'style','float:left;')
@@ -558,7 +558,7 @@
 			const elem = elementVoid(
 				'input',id,null,
 				'id',id,
-				'type','text',
+				'type',type,
 				'style','width:100%;box-sizing:border-box;',
 				'onmousedown',e=>{
 					e.stopPropagation()
@@ -589,7 +589,16 @@
 			lab = lab || ''
 			style = style || ''
 			const id = this._gen_id(line)
-			this._func_list.push(()=>this._textField(id,str,lab,style))
+			this._func_list.push(()=>this._textField(id,str,lab,'text',style))
+			return this._get_return(id,str)
+		},
+
+		passwordField:function(line,str,lab,style){
+			str = str || ''
+			lab = lab || ''
+			style = style || ''
+			const id = this._gen_id(line)
+			this._func_list.push(()=>this._textField(id,str,lab,'password',style))
 			return this._get_return(id,str)
 		},
 
