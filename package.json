@@ -2,9 +2,10 @@
   "name": "imgui",
   "version": "1.0.4",
   "description": "[demo](https://htmlpreview.github.io/?https://github.com/he110world/imgui/master/demo.html)",
+  "prepare":"npm run build",
   "main": "imgui.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+	  "build":"./build.sh"
   },
   "repository": {
     "type": "git",

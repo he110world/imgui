@@ -435,6 +435,15 @@
 			const id = this._gen_id(line)
 			this._func_list.push(()=>this._horizontalRule(id))
 		},
+		_hyperlink:function(id,url,str){
+			elementOpen('a',id,null,'href',url)
+			text(str)
+			elementClose('a')
+		},
+		hyperlink:function(line,url,str){
+			const id = this._gen_id(line)
+			this._func_list.push(()=>this._hyperlink(id,url,str))
+		},
 
 		_label:function(id,str,onclick){
 			elementOpen('div',id,null,
