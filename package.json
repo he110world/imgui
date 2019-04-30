@@ -1,11 +1,11 @@
 {
   "name": "imgui",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "[demo](https://htmlpreview.github.io/?https://github.com/he110world/imgui/master/demo.html)",
-  "prepare":"npm run build",
+  "prepare": "npm run build",
   "main": "imgui.js",
   "scripts": {
-	  "build":"./build.sh"
+    "build": "./build.sh"
   },
   "repository": {
     "type": "git",
