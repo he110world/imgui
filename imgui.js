@@ -436,7 +436,7 @@
 			this._func_list.push(()=>this._horizontalRule(id))
 		},
 		_hyperlink:function(id,url,str){
-			elementOpen('a',id,null,'href',url)
+			elementOpen('a',id,null,'href',url,'style','width:fit-content;','target','_blank')
 			text(str)
 			elementClose('a')
 		},
