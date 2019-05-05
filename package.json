@@ -1,6 +1,6 @@
 {
   "name": "imgui",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "[demo](https://htmlpreview.github.io/?https://github.com/he110world/imgui/master/demo.html)",
   "prepare": "npm run build",
   "main": "imgui.js",
