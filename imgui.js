@@ -445,9 +445,9 @@
 			this._func_list.push(()=>this._hyperlink(id,url,str))
 		},
 
-		_label:function(id,str,onclick){
+		_label:function(id,str,style,onclick){
 			elementOpen('div',id,null,
-				    'style','width:100%;overflow-wrap:break-word;',
+				    'style','width:100%;overflow-wrap:break-word;'+style,
 				    'onmousedown',e=>{
 					    e.stopPropagation()
 					    if (typeof onclick==='function') {
@@ -459,9 +459,15 @@
 			text(str)
 			elementClose('div');
 		},
-		label:function(line,str,onclick){
+		label:function(line,str,style,onclick){
+			if (typeof style==='function') {
+				onclick = style
+				style = ''
+			}
+			style = style || ''
+
 			const id = this._gen_id(line)
-			this._func_list.push(()=>this._label(id,str,onclick))
+			this._func_list.push(()=>this._label(id,str,style,onclick))
 			return str
 		},
 
