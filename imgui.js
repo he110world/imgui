@@ -777,12 +777,25 @@
 					out.push(nl)
 				}
 			}
+
+			const name = this._get_url()
+
+			//HACK
+			const debug_url = `//# sourceURL=${name}`
+			out.push(debug_url)
+
 			const patched = out.join('\n')
 			return new Function('layout',patched)
 		},
 		contextify:function(f){
 			const f2 = this._patch(f)
 			f2()
+		},
+		_get_url:function(){
+			const e = new Error()
+			const lines = e.stack.split('\n')
+			const line = lines[lines.length-1]
+			return line.match(/https?:\/\/.*\/[^:]*/)[0]
 		},
 		layout:function(d,f){
 			const layout = new ImGuiLayout(d)
